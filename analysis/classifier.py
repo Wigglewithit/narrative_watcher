@@ -3,7 +3,10 @@ from transformers import pipeline
 # Define your candidate labels
 LABELS = [
     # Core mainstream topics
-    "Politics", "Economy", "Health", "Technology", "Environment",
+    "Government & Policy",       # Replaces generic "Politics"
+    "Civil Rights & Liberties",  # Targets freedom-focused political stories
+    "Geopolitical Affairs",      # Covers foreign power moves, alliances, conflicts
+    "Economy", "Health", "Technology", "Environment",
     "War", "Crime", "Education", "Science", "Culture",
     "Business", "Entertainment", "Sports", "Opinion",
 
@@ -26,7 +29,6 @@ LABELS = [
     "Censorship",
     "Disinformation"
 ]
-
 
 # Load the model once globally (it will cache after first use)
 classifier = pipeline("zero-shot-classification", model="facebook/bart-large-mnli")
